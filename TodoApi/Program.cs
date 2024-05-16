@@ -10,6 +10,7 @@ internal class Program
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
         builder.Services.AddEndpointsApiExplorer();
+
         builder.Services.AddOpenApiDocument(config =>
         {
             config.DocumentName = "TodoAPI";
