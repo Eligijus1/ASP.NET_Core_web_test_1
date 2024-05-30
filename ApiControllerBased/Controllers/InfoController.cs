@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ApiControllerBased.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class InfoController : ControllerBase {
-        private readonly ILogger<WeatherForecastController> _logger;
+    public class InfoController : ControllerBase
+    {
+        private readonly ILogger<InfoController> _logger;
 
-        public InfoController(ILogger<WeatherForecastController> logger)
+        public InfoController(ILogger<InfoController> logger)
         {
             _logger = logger;
         }
@@ -15,9 +17,14 @@ namespace ApiControllerBased.Controllers
         [HttpGet(Name = "GetAboutInformation")]
         public string Get()
         {
-            this._logger.LogInformation("INFO_CONTROLLER_GET_START");
+            this._logger.LogInformation("{Date} {Time} UTC INFO_CONTROLLER_GET_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM.",
+                DateTime.UtcNow.ToShortDateString(),
+                DateTime.UtcNow.ToLongTimeString(),
+                Process.GetCurrentProcess().Id,
+                GC.GetTotalMemory(true)
+            );
 
-            return "Test API v2024-05-18";
+            return "Test API v2024-05-30";
         }
     }
 }
