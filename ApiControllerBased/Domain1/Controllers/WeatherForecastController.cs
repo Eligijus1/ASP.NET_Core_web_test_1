@@ -1,3 +1,4 @@
+using ApiControllerBased.Domain1.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiControllerBased.Domain1.Controllers

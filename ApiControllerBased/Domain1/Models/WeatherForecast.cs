@@ -1,4 +1,4 @@
-namespace ApiControllerBased
+namespace ApiControllerBased.Domain1.Models
 {
     public class WeatherForecast
     {
