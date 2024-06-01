@@ -1,5 +1,4 @@
-﻿using ApiControllerBased.Controllers;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace ApiControllerBased.Domain1.Controllers

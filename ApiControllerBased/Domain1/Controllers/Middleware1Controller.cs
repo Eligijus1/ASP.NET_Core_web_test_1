@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ApiControllerBased.Controllers
+namespace ApiControllerBased.Domain1.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -18,7 +18,7 @@ namespace ApiControllerBased.Controllers
         [HttpGet(Name = "GetMiddleware1")]
         public string Get()
         {
-            this._logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_GET_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM.",
+            _logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_GET_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM.",
                 DateTime.UtcNow.ToShortDateString(),
                 DateTime.UtcNow.ToLongTimeString(),
                 Process.GetCurrentProcess().Id,
@@ -31,7 +31,7 @@ namespace ApiControllerBased.Controllers
         [HttpPost(Name = "PostMiddleware1")]
         public string Post(string parameter1, string parameter2, string parameter3)
         {
-            this._logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_POST_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM. parameter1={parameter1}. parameter2={parameter2}. parameter3={parameter3}",
+            _logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_POST_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM. parameter1={parameter1}. parameter2={parameter2}. parameter3={parameter3}",
                 DateTime.UtcNow.ToShortDateString(),
                 DateTime.UtcNow.ToLongTimeString(),
                 Process.GetCurrentProcess().Id,
@@ -47,7 +47,7 @@ namespace ApiControllerBased.Controllers
         [HttpDelete(Name = "DeleteMiddleware1")]
         public string Delete(int parameter1)
         {
-            this._logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_DELETE_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM. parameter1={parameter1}.",
+            _logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_DELETE_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM. parameter1={parameter1}.",
                 DateTime.UtcNow.ToShortDateString(),
                 DateTime.UtcNow.ToLongTimeString(),
                 Process.GetCurrentProcess().Id,
