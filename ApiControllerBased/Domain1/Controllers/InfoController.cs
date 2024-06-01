@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ApiControllerBased.Controllers
+namespace ApiControllerBased.Domain1.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -17,14 +17,14 @@ namespace ApiControllerBased.Controllers
         [HttpGet(Name = "GetAboutInformation")]
         public string Get()
         {
-            this._logger.LogInformation("{Date} {Time} UTC INFO_CONTROLLER_GET_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM.",
+            _logger.LogInformation("{Date} {Time} UTC INFO_CONTROLLER_GET_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM.",
                 DateTime.UtcNow.ToShortDateString(),
                 DateTime.UtcNow.ToLongTimeString(),
                 Process.GetCurrentProcess().Id,
                 GC.GetTotalMemory(true)
             );
 
-            return "Test API v2024-05-30";
+            return "Test API v2024-06-01";
         }
     }
 }
