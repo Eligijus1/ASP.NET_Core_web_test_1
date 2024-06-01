@@ -15,7 +15,7 @@ namespace ApiControllerBased.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetMiddleware1AboutInformation")]
+        [HttpGet(Name = "GetMiddleware1")]
         public string Get()
         {
             this._logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_GET_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM.",
@@ -25,78 +25,37 @@ namespace ApiControllerBased.Controllers
                 GC.GetTotalMemory(true)
             );
 
-            return "Middleware1Controller GET v2024-05-30";
+            return "Middleware1Controller GET done";
         }
 
-        /*
-        // GET: Middleware1Controller
-        public ActionResult Index()
+        [HttpPost(Name = "PostMiddleware1")]
+        public string Post(string parameter1, string parameter2, string parameter3)
         {
-            return View();
+            this._logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_POST_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM. parameter1={parameter1}. parameter2={parameter2}. parameter3={parameter3}",
+                DateTime.UtcNow.ToShortDateString(),
+                DateTime.UtcNow.ToLongTimeString(),
+                Process.GetCurrentProcess().Id,
+                GC.GetTotalMemory(true),
+                parameter1,
+                parameter2,
+                parameter3
+            );
+
+            return "Middleware1Controller POST done.";
         }
 
-        // GET: Middleware1Controller/Details/5
-        public ActionResult Details(int id)
+        [HttpDelete(Name = "DeleteMiddleware1")]
+        public string Delete(int parameter1)
         {
-            return View();
-        }
+            this._logger.LogInformation("{Date} {Time} UTC MIDDLEWARE_1_CONTROLLER_DELETE_START. Process ID: {ProcessId}. Used {RAM} bytes of RAM. parameter1={parameter1}.",
+                DateTime.UtcNow.ToShortDateString(),
+                DateTime.UtcNow.ToLongTimeString(),
+                Process.GetCurrentProcess().Id,
+                GC.GetTotalMemory(true),
+                parameter1
+            );
 
-        // GET: Middleware1Controller/Create
-        public ActionResult Create()
-        {
-            return View();
+            return "Middleware1Controller DELETE done.";
         }
-
-        // POST: Middleware1Controller/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // POST: Middleware1Controller/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Middleware1Controller/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Middleware1Controller/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        */
     }
 }
