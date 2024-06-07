@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi\TodoApi.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{B41E8C85-95EC-4762-B591-BC8EEDD86254}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiControllerBased", "ApiControllerBased\ApiControllerBased.csproj", "{A9735770-420B-4E09-8A6E-2E82782BE445}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiControllerBased", "ApiControllerBased\ApiControllerBased.csproj", "{A9735770-420B-4E09-8A6E-2E82782BE445}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
