@@ -23,6 +23,7 @@ builder.Services.AddControllersWithViews();
 // Secure all the Controller methods by default.
 // As per as our requirement, we need to allow any random visitor to use the Home/Index method.
 // This will add a new policy to the ASP.NET Core MVC Application that every method needs an authenticated user, unless we define it as [AllowAnonymous]
+/*
 builder.Services.AddMvc(o =>
 {
     //Add Authentication to all Controllers by default.
@@ -31,6 +32,7 @@ builder.Services.AddMvc(o =>
         .Build();
     o.Filters.Add(new AuthorizeFilter(policy));
 });
+*/
 
 var app = builder.Build();
 
